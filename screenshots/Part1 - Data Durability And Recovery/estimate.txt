@@ -1,0 +1,36 @@
+1.	Mnimum RTO for a single AZ outage
+
+	The given scenario has has multi-AZ deployment of RDS instance which means there is a replica already running which will ensure quick recovery, still the process of Otage discovery and deploying the fix can take some time.
+    We can break down the Process as follows :
+    Time        Event
+    t           Outage occurs
+    t+5(max)    alert is Triggered
+    t+10(max)   Imagining a lambda function is already set up to listem to events from RDS. It can be used to automatically change the database host for the application if the application uses some central configuration to handele the various resource urls for the application.
+
+    Therefore Approximate RTO 10mins
+
+	
+2.	Minimum RTO for a single region outage
+
+    The given scenario has a read replica set up in a different region which can be promoted to Primary Instance.
+    The whole process can be broken down as follows:
+    Time        Event
+    t           Outage occurs
+    t+5(max)    alert is Triggered
+    t+10(max)   Imagining we have an active On call/support Engineer who responds to the  alert and starts the process of promoting the read replica to Primary Db.
+    t+30        Time taken to bring the read Replica to standalone instance is around 15~20 mins
+    t+35        The host dns needs to be changed in the application.
+
+    Therefore Approximate RTO ±35mins
+
+3.	Minimum RPO for a single AZ outage
+
+    Automatic backups can be enabled in multi-AZ scenario to take a snapshot every day. Also AWS has transactional log backup every 5 min.
+    Which can be used to restore the database. So the maximum span in which data can be lost is 5 mins.
+
+
+4.	Minimum RPO for a single region outage
+
+    Having a read replica in seperate region which is updated asynchronously from the Primary ensures no old data is lost.
+    Since the read replica needs to be promoted to Primary Inscance, which takes around 15~20 mins to setup. During which the application can't consume any new data.
+    So considering the manual intervntion in between the RPO for a single region Outage would be ±35mins
