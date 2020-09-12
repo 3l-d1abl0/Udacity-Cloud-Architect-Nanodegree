@@ -1,0 +1,43 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),,Amazon EC2,0,596.35,7156.2,USD,"Operating system (Linux), Quantity (4), Pricing strategy (Standard Reserved Instances 3 Year No UpFront), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (1.2 TB), Instance type (t3.large)"
+My Estimate,US East (N. Virginia),,Amazon EC2,0,743.81,8925.72,USD,"Operating system (Linux), Quantity (4), Pricing strategy (Standard Reserved Instances 3 Year No UpFront), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (1.2 TB), Instance type (m4.xlarge)"
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,921,614.423,8294.08,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances  ), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (5 TB), Instance type (db.m5.large)"
+My Estimate,US East (N. Virginia),,S3 Intelligent - Tiering,0,81.31,975.72,USD,S3 INT storage (4 TB per month)
+My Estimate,US East (N. Virginia),,Data Transfer,0,2662.31,31947.72,USD," Inbound (from: Internet) 0 TB per month 
+ Outbound (to: Internet) 30 TB per month 
+"
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,32.81,393.72,USD,Number of Application Load Balancers (1)
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,53.34,640.08,USD,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (2 TB per month), Average number of new TCP connections (1500 per minute), Processed bytes per NLB for UDP (2 TB per month), Processed bytes per NLB for TLS (2 TB per month), Average number of new TLS connections (1500 per minute)"
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,66.16,793.92,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,205.5,2466,USD,"Hosted Zones (1), Basic Checks Within AWS (360)"
+My Estimate,US East (N. Virginia),,Amazon CloudWatch,0,60.00002,720,USD,
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,921,614.423,8294.08,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances 3 Year No Upfront), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (5 TB), Instance type (db.m5.large)"
+Global,All,Business support plan,AWS Support,184.2,573.04 First month including upfront and monthly fee 757.24,7060.68,USD,"Supports 24/7 phone, chat, and email access to Cloud Support Engineers for unlimited contacts, with and a response time of less than 1 hour."
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Reduced Monthly Estimate,,,,,"6,303.48 USD",,,
+,,,,,,,,
+,,,,,,,,
+"*** The Problem statement doesn't specifiy the nature of Social Media Platform. For example it can multimedia heavy (like instagram) or text heavy(like Twitter). And it can be Read Heavy or Write Heavy as well.
+*** I have designed the Infa asumung the Platform to be Balanced in terms of multimedia and text. 
+
+1.  Downgraded Web servers to t3.large.
+	Both (Web n Application Server )EC2 types changed from On-demad to Reserved Instances for 3 years.
+	Reduced EBS storage for both the Servers.
+
+2.	Downgraded MySql RDS instance from db.m5.xlarge to db.m5.large. Both master and Replica.
+	Switched to Reserved Instance for 3 Years.
+
+3.	Reduced S3 storage TB/month
+	Switched to s3 intelligent tiering with the assumtion of 30% of the storage in infrequent Access.
+	Leading to reduction of outbound data Transfer by 25%
+
+4.	Reduced the assumed bytes processed on NLB.
+	Reduced the estimated number of new connections per minute for NLB.
+
+5.	Reduced the assumed bytes processed on ALB.
+	Reduced the estimated number of new connections for Application Load Balancer
+
+6. NOT Removing the Business Support Plan as with reduced Infra, user capacity handling is already low. Removing business support plan may lead to late resolution of any accidental Outages which may affect availability.
+",,,,,,,,

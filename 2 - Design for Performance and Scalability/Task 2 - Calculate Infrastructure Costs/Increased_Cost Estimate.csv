@@ -1,0 +1,41 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),,Amazon EC2,0,3313.73,39764.76,USD,"Operating system (Linux), Quantity (6), Pricing strategy (Standard Reserved Instances  ), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (3000 GB), Instance type (m4.4xlarge)"
+My Estimate,US East (N. Virginia),,Amazon EC2,0,3313.73,39764.76,USD,"Operating system (Linux), Quantity (6), Pricing strategy (Standard Reserved Instances  ), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (3000 GB), Instance type (m4.4xlarge)"
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,3685,808.906,13391.87,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances  ), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (6 TB), Instance type (db.m5.2xlarge)"
+My Estimate,US East (N. Virginia),,S3 Standard,0,485.52,5826.24,USD,S3 Standard storage (10 TB per month)
+My Estimate,US East (N. Virginia),,S3 Intelligent - Tiering,0,0.2,2.4,USD,S3 INT storage (10 GB per month)
+My Estimate,US East (N. Virginia),,S3 Glacier,0,0.05,0.6,USD,S3 Glacier storage (2 GB per month)
+My Estimate,US East (N. Virginia),,Data Transfer,0,5119.91,61438.92,USD,"Data Transfer, Data transfer cost (5119.91)"
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,131.15,1573.8,USD,Number of Application Load Balancers (2)
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,127.05,1524.6,USD,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (6 TB per month), Average number of new TCP connections (6000 per minute), Processed bytes per NLB for UDP (6 TB per month), Processed bytes per NLB for TLS (6 TB per month), Average number of new TLS connections (6000 per minute)"
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,66.16,793.92,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,205.5,2466,USD,"Hosted Zones (1), Basic Checks Within AWS (360)"
+My Estimate,US East (N. Virginia),,Amazon CloudWatch,0,160.18004,1922.16,USD,
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,3685,691.146,11978.75,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances 3 Year No Upfront), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (5 TB), Instance type (db.m5.2xlarge)"
+My Estimate,US East (N. Virginia),,Amazon ElastiCache,49584,1598.7,68768.4,USD,( 6 instances of type Redis  Memory optimized  cache r4.4xlarge  Reserved  Heavy Utilization  3yr )
+My Estimate,US East (N. Virginia),,AWS Web Application Firewall (WAF),0,566,6792,USD,"Number of Web Access Control Lists (Web ACLs) utilized (20 per month), Number of Rules added per Web ACL (20 per month), Number of Rule Groups per Web ACL (20 per month), Number of Rules inside each Rule Group (20 per month), Number of Managed Rule Groups (20 per month)"
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,3685,105.796,4954.55,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances  ), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (30 GB), Instance type (db.m5.2xlarge)"
+Global,All,Business support plan,AWS Support,4544.73,1468.56 First month including upfront and monthly fee 5713.29,21867.45,USD,"Supports 24/7 phone, chat, and email access to Cloud Support Engineers for unlimited contacts, with and a response time of less than 1 hour."
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Increased Monthly Estimate,,,,,"18,162.29 USD",,,
+,,,,,,,,
+,,,,,,,,
+"Enhancements Made :
+
+1. Increased RDS instance to db.m5.2xlarge, both Master and Replica.
+
+2.	Upgraded Web Server Instances to m4.4xlarge, also now each AZ wil have 3 each Web servers and increaded the internal storage as well.
+Upgraded Application Instances to m4.4xlarge. Also each AZ will have 3 each Application Servers.
+	
+3.  Added 6 Elasticache instances to serve frequently used data instead of hitting Database Servers. And to handle user timeline, assuming our social media network has newsfeed.
+
+4.	Added AWS Web Application Firewall to protect the Servers
+	
+5. CouldWatch - increased number of logs and metrics.
+
+6. Increased S3 storage utilization per month. Added Glacier storage as well to move the infrequent objects to glacier storage after a certain storage period.
+
+7. Adding one RDS more Mysql Instance in another AZ to intoduce redundancy.
+",,,,,,,,

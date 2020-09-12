@@ -1,0 +1,19 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),,Amazon EC2,0,1104.56,13254.72,USD,"Operating system (Linux), Quantity (4), Pricing strategy (EC2 Instance Savings Plans 1 Year No UpFront), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (2000 GB), Instance type (t3.xlarge)"
+My Estimate,US East (N. Virginia),,Amazon EC2,0,1561.79,18741.48,USD,"Operating system (Linux), Quantity (4), Pricing strategy (EC2 Instance Savings Plans 1 Year No UpFront), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (3000 GB), Instance type (m4.xlarge)"
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL,0,748.743,8984.92,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances  ), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (5 TB), Instance type (db.m5.xlarge)"
+My Estimate,US East (N. Virginia),,S3 Standard,0,142.76,1713.12,USD,S3 Standard storage (5 TB per month)
+My Estimate,US East (N. Virginia),,Data Transfer,0,3532.71,42392.52,USD," Inbound (from: Internet) 0 TB per month 
+ Outbound (to: Internet) 40 TB per month 
+"
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,41.01,492.12,USD,Number of Application Load Balancers (1)
+My Estimate,US East (N. Virginia),,Elastic Load Balancing,0,71.74,860.88,USD,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (3 TB per month), Average number of new TCP connections (3000 per minute), Processed bytes per NLB for UDP (3 TB per month), Processed bytes per NLB for TLS (3 TB per month), Average number of new TLS connections (3000 per minute)"
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,66.16,793.92,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,205.5,2466,USD,"Hosted Zones (1), Basic Checks Within AWS (360)"
+My Estimate,US East (N. Virginia),,Amazon CloudWatch,0,60.00002,720,USD,
+My Estimate,US East (N. Virginia),,Amazon RDS for MySQL (Replica),0,748.743,8984.92,USD,"Quantity (1), Pricing strategy (Standard Reserved Instances  ), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (5 TB), Instance type (db.m5.xlarge)"
+Global,All,Business support plan,AWS Support,0,828.37,9940.44,USD,"Supports 24/7 phone, chat, and email access to Cloud Support Engineers for unlimited contacts, with and a response time of less than 1 hour."
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Approx Monthly Estimate,,,,,"9,112.09 USD",,,
