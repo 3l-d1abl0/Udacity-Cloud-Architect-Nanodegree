@@ -1,0 +1,17 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+
+Web Service Instance - C3 is placed in Public Subnet and the security Group associated accepts Incoming traffic on all port (0.0.0.0/0) which is highlu undesirable.
+Typicaly the Web Server shoul be placed in a PrivateSubnet and it should accept http/https traffic only from Load Balancer.
+
+# Poor practice 2
+Custom TCP	TCP	5000	0.0.0.0/0
+The EC2 instnce is listening of coustom ports like 5000, which should be closed as port 5000 is used by various devices to send traffic to For example Port 5000 us used by Microsoft’s Universal Plug n Play.
+The instance should only accept traffic from the Load Balancer.
+
+# Poor practice 3
+The IAM Role 'InstanceRolePolicy-C3' assigned to both the instance enables Full Access to S3, which is a major flaw. It should follow the principle of least privilage i.e the role assigned to the Instance should have limited privilages only to the Bucket being used.
+
+# Poor practice 4
+AppTargetGroup is set to forward traffic to the Instace at port 5000. Which should be avoided . Typically the load balancer should leverage SSl termination, hence the load balancer should list to port 443 and then forward it to the target Group at port 80.
