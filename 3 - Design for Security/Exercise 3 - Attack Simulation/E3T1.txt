@@ -1,0 +1,20 @@
+GuardDuty Findings :
+
+1. One of the instance is being attacked by other instance.
+    message:
+    <ip> is performing SSH brute force attacks against <instance>.
+    Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+
+2. One of the instance is performing SSh brute force attack on other instance.
+    message:
+    <instance> is performing SSH brute force attacks against <ip>.
+    Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information?
+
+From the Docs : https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html
+"To detect unauthorized and unexpected activity in your AWS environment, GuardDuty analyzes and processes data from AWS CloudTrail event logs, VPC Flow Logs, and DNS logs to detect anomalies"
+
+In this case VPC flow logs bucket in S3 would show the logs generated while attempting the attack.
+Analyzing the logs would reveal a particular ip attempting SSH on other IP which is Rejected.
