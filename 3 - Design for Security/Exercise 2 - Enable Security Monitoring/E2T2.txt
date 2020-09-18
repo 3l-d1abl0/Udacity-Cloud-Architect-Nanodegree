@@ -1,0 +1,21 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+AttackInstanceSG:
+1. Ensure no security groups allow ingress from 0.0.0.0/0 to port 22
+
+WebAppSG:
+1. Ensure no security groups allow ingress from 0.0.0.0/0 to port 22
+2. Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389
+
+
+Ensure the default security group of every VPC restricts all traffic
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+1. If port 22 really needs to be used for ssh, it better to specify the IP of the admin in the Security Group who is Supposed to ssh into it.
+Or better yet use Systems Manager to ssh into the EC2 so that all the access to the instances can be tracked.
+
+2. Similarly for if port 3389 needs to be used for incoming traffic, better specify the source IP in the Rules.
+Or remove the rule if its not needed at all.
+
+3. The Inbound/Outbound rules for the security group should be deleted and added as and when required.
