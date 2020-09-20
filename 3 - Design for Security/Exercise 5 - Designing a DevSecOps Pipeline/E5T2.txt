@@ -1,0 +1,55 @@
+Task 2 - Tools and Documentation
+
+Identify tools that will allow you to do the following:
+
+a. Scan infrastructure as code templates.
+
+    Regula: https://github.com/fugue/regula
+    Regula allows for scanning Terraform code.
+    Example:
+
+    "iam_password_length":{
+        "resources":{
+            "":{
+                "id":"",
+                "message":"No aws_iam_account_password_policy present",
+                "type":"aws_iam_account_password_policy",
+                "valid":false
+            }
+        },
+        "valid":false
+    },
+
+    CFRipper: https://github.com/Skyscanner/cfripper
+    CFRipper for analyzing the AWS Cloudformation Templates.
+
+    Example:
+    - IAMRolesOverprivilegedRule: Role 'rootRole' contains an insecure permission '*' in policy 'root'
+
+====================================================
+
+b. Scan AMI’s or containers for OS vulnerabilities.
+
+    Trivy : https://github.com/aquasecurity/trivy
+
+    Example:
+    Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+    +---------------+------------------+----------+-------------------+------------------+--------------------------------+
+    | LIBRARY | VULNERABILITY ID | SEVERITY | INSTALLED VERSION | FIXED VERSION | TITLE |
+    +---------------+------------------+----------+-------------------+------------------+--------------------------------+
+    | activesupport | CVE-2020-8165 | HIGH | 6.0.2-1 | 6.0.3.1, 5.2.4.3 | rubygem-activesupport: |
+    +---------------+------------------+----------+-------------------+------------------+--------------------------------+
+
+====================================================
+
+c. Scan an AWS environment for cloud configuration vulnerabilities.
+
+    AWS SecurityHub
+
+    Example:
+     Ensure IAM policies that allow full "*:*" administrative privileges are not created 
+     Attached EBS volumes should be encrypted at-rest
+
+
+
