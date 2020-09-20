@@ -1,0 +1,18 @@
+Task 4: Questions and Analysis
+
+
+1. What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance?
+    -> Placing the Web Application in a Private Subnet and placing a loadbalancer in a Public subnet. which indeed receives direct incoming http/https traffic. In case of web attacks like DDoS the loadbalancer takes the load without hampering the Web Application Server Performance.
+    -> Placing a Bastion host in Public subnet with ssh forwarding to the Web Application in Private Subnet. In case of ssh brute force the Bastion Server takes the Load.
+    -> If its within the Budget and absolutely necessary then Opt for AWS Shield Advanced.
+
+
+2. Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+    -> Creating VPC Endpoint for S3 will not prevent unauthorized access since it will only route the request through Amazon Metwork but the instances will still have access to the Endpoints.
+
+
+3. Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+    -> No, it wont affect the Existing Data, only the new incoming Objects will be Encrypted. In order to encrypt the exixting data, they needed to be downloaded and uploaded to the Bucket.
+
+4. The changes you made above were done through the console or CLI; describe the outcome if the original cloud formation templates are applied to this environment?
+    -> The changes made will be reverted since the Cloudformation templates will create the old stack with Vulnerability.

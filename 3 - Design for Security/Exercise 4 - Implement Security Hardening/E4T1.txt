@@ -1,0 +1,14 @@
+Task 1 - Remediation plan
+
+
+1. Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.
+
+    -> Configure your ssh and disable login via username/password, use keys instead.
+    -> Restict access from the internet. Avoid using 0.0.0.0/0 in the Inbound Rules. If possible provide the Ip of the administrator who is supposed to Login.
+    -> Configure you service to run on different port other than the standard 22.
+    -> OR put the web application EC2 instance in a Private subnet and setup a Bastion host with SSH forwarding in public subnet and apply all the above measure on the bastion host,
+        This method will prevent resource depletion in the WebApplication EC2 in case of a Distributed SSH attack as it wont accept ssh connections and even incase of distributed ssh attacks, it will be upon Bastion server and the Performance of WebApplication instance wont be affected.
+
+
+2. Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials were compromised how could we have prevented access to sensitive data?
+    -> currently the Role assigned to the EC2 instances has an Inline policy which is configured to give fill S3 access to the instanced. The Policy needs to be tweaked so that it only allows access to the Free recepies.
